@@ -1,0 +1,7 @@
+function chart_bar(string1,string2,string3){   //string1:计划数   string2：完成数    string3：开机数 data_json:data数组解析后的参数值
+		chart.draw(eval('('+ '{"chart":{"type":"column","marginBottom":40,"height":240,"backgroundColor":"#062236","percent":2},						"title":{"align":"left","text":"项目生产工序进度/项目号","textStyle":{"fontSize":14,"color":"#eeeeee"}},					"legend":{"align":"right","verticalAlign":"top","textStyle":{"color":"#fafafa"}},"toolbox":{"show":true,"feature" : {"mark" : {"show": true},"dataView":{"show": true, "readOnly": false}, "tooltip" : {"trigger": "axis"},"magicType" : {"show": true, "type": ["line","bar"]},"restore" : {"show": "true"},"saveAsImage" : {"show": true}}},	"series":[{"name":"计划数量","data":['+string1+']},	{"name":"完成数量","color":"#dd7e6b", barGap: "-100%","opacity":1,"label":{},"data":['+string2+']}], "xAxis":{"data":['+string3+'],"type":"category","lineColor":"#C0D0E0","splitLineEnabled":true,"splitLineType":"solid","dataZoomEnabled":true,"zoomStart":flag,"zoomEnd":flag+60,"label":{"textStyle":{"color":"#fafafa"}},"axisLine": {"show":false},"axisTick": {"show":false},"axisLabel": {"show":false},"splitArea": {"show":false}, "splitLine": {"show":false}},"yAxis":{"type":"number","lineColor":"#C0D0E0","splitLineEnabled":false,"splitLineType":"solid","label":{"textStyle":{"color":"#fafafa"}}}}'+')'),'chart_3_0')     //去掉barGap即可取消层叠
+			flag=flag+10;
+			if(flag==50){          //flag用于控制显示(全局变量)
+				flag=0;
+			}		
+}
